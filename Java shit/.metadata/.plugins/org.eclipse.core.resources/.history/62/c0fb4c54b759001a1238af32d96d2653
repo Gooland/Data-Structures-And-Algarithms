@@ -1,0 +1,15 @@
+
+public class Calculator 
+{
+	private List l;
+	
+	public Calculator()
+	{
+		
+	}
+	
+	public int calculate(String in)
+	{
+		
+	}
+}

@@ -1,0 +1,30 @@
+
+public class Calculator 
+{
+	private List operands;
+	private List operators;
+	
+	public Calculator()
+	{
+		operands = new List();
+		operators = new List();
+	}
+	
+	public int calculate(String in)
+	{
+		
+	}
+	
+	private void seporate(String in)
+	{
+		char ch;
+		for (int i = 0; i<in.length();i++)
+		{
+			ch = in.charAt(i);
+			if(Character.isDigit(ch))
+				operands.addOnBottom(ch);
+			else if(Character.isDigit(ch)) 
+				
+		}
+	}
+}

@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		Calculator c = new Calculator();
+		Scanner in = new Scanner(System.in);//https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/
+		boolean exit = false;
+		
+		while(!exit)
+		{
+			System.out.println("Input calculation or input \"help\" for examples or input \"exit\" to exit.");
+			String input = in.nextLine();
+			if(input == "help")
+			{
+				System.out.println("3 2 +     =     5");
+				System.out.println("9 3 /     =     3");
+				System.out.println("6 2 -     =     4");
+				System.out.println("5 6 8 * +     =     38");
+				System.out.println("6 4 2 / -     =     -.5");
+				System.out.println("9 8 7 6 / * +     =     13.875");
+			}
+			else if(input=="exit")
+				exit = true;
+			else 
+			{
+				double out;
+				try {
+					out = c.calculate(input);
+					System.out.println(out);
+				} catch (CalculationExeption e) {
+					System.out.println("calculation failed");
+				}
+			
+			}
+				
+				
+		}
+	}
+
+}
