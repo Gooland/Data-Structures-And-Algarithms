@@ -45,7 +45,7 @@ public class Recursion {
 		int mid = low+((high-low)/2);
 		mergeSort(arr, mid, high);
 		mergeSort(arr, low, mid-1);
-		
+		merge(arr, low, mid, high);
 	}
 	
 	public static void merge(long[] arr, int low, int mid, int high)
@@ -55,7 +55,35 @@ public class Recursion {
 		int i =low;
 		for (int j =0; j<left.length; j++,i++)
 		{
-			
+			left[j] = arr[i];
+		}
+		for (int j =0; j<right.length; j++,i++)
+		{
+			right[j] = arr[i];
+		}
+		i=low;
+		for(int l=0, r=0; l <= left.length && r<= right.length && i<high;i++)
+		{
+			if(l==left.length)
+			{
+				arr[i]=right[r];
+				r++;
+			}
+			else if(r ==right.length)
+			{
+				arr[i]=left[l];
+				l++;
+			}
+			else if(left[l]<=right[r])
+			{
+				arr[i]=left[l];
+				l++;
+			}
+			else
+			{
+				arr[i]=right[r];
+				r++;
+			}
 		}
 	}
 
